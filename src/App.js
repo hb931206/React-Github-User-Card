@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
+import UserCard from "./components/UserCard";
+
 import "./App.css";
 
 class App extends React.Component {
@@ -14,7 +15,6 @@ class App extends React.Component {
     fetch("https://api.github.com/users/hb931206")
       .then((res) => res.json())
       .then((user) => {
-        console.log("Me:", user);
         this.setState({ henry: user });
         console.log(this.state.henry);
       })
@@ -26,7 +26,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello Henry</h1>
+        <UserCard
+          name={this.state.henry.name}
+          // image={this.state.henry.avatar_url}
+          location={this.state.henry.location}
+          followers={this.state.henry.followers}
+          following={this.state.henry.following}
+        />
       </div>
     );
   }
