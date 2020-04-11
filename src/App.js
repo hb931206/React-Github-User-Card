@@ -8,6 +8,7 @@ class App extends React.Component {
     super();
     this.state = {
       henry: {},
+      followers: [],
     };
   }
 
@@ -17,6 +18,16 @@ class App extends React.Component {
       .then((user) => {
         this.setState({ henry: user });
         console.log(this.state.henry);
+      })
+      .catch((err) => {
+        console.log("Err:", err);
+      });
+
+    fetch("https://api.github.com/users/hb931206/followers")
+      .then((rest) => rest.json())
+      .then((follower) => {
+        this.setState({ followers: follower });
+        console.log(this.state.followers);
       })
       .catch((err) => {
         console.log("Err:", err);
