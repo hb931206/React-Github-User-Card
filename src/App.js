@@ -1,5 +1,6 @@
 import React from "react";
 import UserCard from "./components/UserCard";
+import FollowerList from "./components/FollowerList";
 
 import "./App.css";
 
@@ -17,7 +18,6 @@ class App extends React.Component {
       .then((res) => res.json())
       .then((user) => {
         this.setState({ henry: user });
-        console.log(this.state.henry);
       })
       .catch((err) => {
         console.log("Err:", err);
@@ -27,7 +27,7 @@ class App extends React.Component {
       .then((rest) => rest.json())
       .then((follower) => {
         this.setState({ followers: follower });
-        console.log(this.state.followers);
+        // console.log("Followers", this.state.followers);
       })
       .catch((err) => {
         console.log("Err:", err);
@@ -44,6 +44,7 @@ class App extends React.Component {
           followers={this.state.henry.followers}
           following={this.state.henry.following}
         />
+        <FollowerList followers={this.state.followers} />
       </div>
     );
   }
