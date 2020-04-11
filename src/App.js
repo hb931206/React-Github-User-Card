@@ -28,7 +28,7 @@ class App extends React.Component {
       <div className="App">
         <UserCard
           name={this.state.henry.name}
-          // image={this.state.henry.avatar_url}
+          image={this.state.henry.avatar_url}
           location={this.state.henry.location}
           followers={this.state.henry.followers}
           following={this.state.henry.following}
