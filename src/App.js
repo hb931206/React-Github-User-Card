@@ -1,5 +1,5 @@
 import React from "react";
-import UserCard from "./components/UserCard";
+import MyCard from "./components/MyCard";
 import FollowerList from "./components/FollowerList";
 
 import "./App.css";
@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <UserCard
+        <MyCard
           name={this.state.henry.name}
           image={this.state.henry.avatar_url}
           location={this.state.henry.location}

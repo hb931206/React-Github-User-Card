@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserCard = (props) => {
+const MyCard = (props) => {
   console.log("UserCar props", props);
   return (
     <div>
@@ -13,4 +13,4 @@ const UserCard = (props) => {
   );
 };
 
-export default UserCard;
+export default MyCard;
