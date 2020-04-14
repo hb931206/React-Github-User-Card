@@ -44,6 +44,7 @@ class App extends React.Component {
           followers={this.state.henry.followers}
           following={this.state.henry.following}
         />
+
         <FollowerList followers={this.state.followers} />
       </div>
     );

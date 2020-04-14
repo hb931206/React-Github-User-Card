@@ -3,7 +3,8 @@ import FollowerCard from "./FollowerCard";
 const FollowerList = (props) => {
   console.log("FollowerList", props.followers);
   return (
-    <div classname="followerlist">
+    <div className="follower-list">
+      <h1>Followers</h1>
       {props.followers.map((follower) => (
         <FollowerCard
           name={follower.name}
